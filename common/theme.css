@@ -1,11 +1,10 @@
 :root {
-  --color-primary: #F4DA40;
-  --color-secondary :#D7C53B;
+  --color-primary: #f4da40;
+  --color-secondary: #d7c53b;
   --color-accent: #fff;
   --color-neutral-beige: #000;
-  --color-whatever:  #494947;
-
-  --font-primary: 'Asap', sans-serif;
+  --color-whatever: #494947;
+  --font-primary: "Asap", sans-serif;
 }
 
 html {
