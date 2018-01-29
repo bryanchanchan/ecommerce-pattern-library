@@ -1,0 +1,13 @@
+:root {
+  --color-primary: #F4DA40;
+  --color-secondary :#D7C53B;
+  --color-accent: #fff;
+  --color-neutral-beige: #000;
+  --color-whatever:  #494947;
+
+  --font-primary: 'Asap', sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+}
