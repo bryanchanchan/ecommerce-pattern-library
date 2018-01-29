@@ -1,12 +1,35 @@
 :root {
   --color-primary: #f4da40;
-  --color-secondary: #d7c53b;
-  --color-accent: #fff;
-  --color-neutral-beige: #000;
-  --color-whatever: #494947;
+  --color-primary-dark: #d7c53b;
+  --color-neutral: #7c7b7b;
   --font-primary: "Asap", sans-serif;
 }
 
 html {
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+}
+
+a {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+}
+
+ul,
+ol,
+dl,
+blockquote,
+cite,
+q {
+  color: var(--color-neutral);
   font-family: var(--font-primary);
 }
