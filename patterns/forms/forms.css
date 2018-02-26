@@ -1,0 +1,26 @@
+select,
+input,
+input[type="checkbox"] + label::before,
+textarea,
+input[type="radio"] + label::before {
+  border-color: var(--color-neutral);
+  border-radius: 5px;
+}
+
+textarea,
+select,
+input {
+  min-width: 20rem;
+}
+
+fieldset {
+  border: 0;
+}
+
+h2 {
+  color: var(--color-neutral);
+}
+
+label {
+  color: var(--color-primary-dark);
+}

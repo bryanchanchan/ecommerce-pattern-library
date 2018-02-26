@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Basic Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../../common/modules.css" rel="stylesheet">
+  <link href="../../common/grid.css" rel="stylesheet">
+  <link href="../../common/type.css" rel="stylesheet">
+  <link href="../../common/theme.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
+  <link href="forms.css" rel="stylesheet">
+</head>
+<body>
+
+  <form class="" method="POST" action="https://formspree.io/chan0398@algonquinlive.com">
+    <fieldset>
+      <legend class="yotta">Personal Information</legend>
+        <div class="grid">
+          <div class="unit xs-1 s-1 m-1-2 l-1-2">
+            <div class="pad-t">
+              <label for="">First Name</label><br>
+              <input required id="firstname" name="firstname" type="text">
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Last Name</label><br>
+              <input required id="lastname" name="lastname" type="text">
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Date of Birth</label><br>
+              <input required id="dob" name="dob" type="date">
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Address</label><br>
+              <input required id="address" name="address">
+            </div>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-2 l-1-2">
+            <div class="pad-t">
+              <label for="">City</label><br>
+              <input required id="city" name="city" type="text">
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Province</label><br>
+              <select class="" id="province" name="province">
+                <option value="">Select a province</option>
+                <option>Alberta</option>
+                <option>British Columbia</option>
+                <option>Manitoba</option>
+                <option>New Brunswick</option>
+                <option>Newfoundland &amp; Labrador</option>
+                <option>Northwest Territiories</option>
+                <option>Nova Scotia</option>
+                <option>Nunavut</option>
+                <option>Ontario</option>
+                <option>Prince Edward Island</option>
+                <option>Quebec</option>
+                <option>Saskatchewan</option>
+                <option>Yukon</option>
+              </select>
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Postal Code</label><br>
+              <input required id="postal" name="postal">
+            </div>
+            <div class="pad-t-1-2">
+              <label for="">Telephone<label><br>
+              <input id="postal" name="postal" type="tel">
+            </div>
+          </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="yotta">Dancer information</legend>
+      <div class="">
+        <h2 class="push-0 pad-b-1-8 tera">What is your dance level?</h2>
+      </div>
+      <div class="">
+        <div class="">
+          <input id="beginner" name="level" type="radio">
+          <label for="beginner">Beginner</label>
+        </div>
+        <div class="">
+          <input id="intermediate" name="level" type="radio">
+          <label for="intermediate">Intermediate</label>
+        </div>
+        <div class="">
+          <input id="advance" name="level" type="radio">
+          <label for="advance">Advance</label>
+        </div>
+      </div>
+
+      <div class="">
+        <h2 class="push-0 pad-b-1-8 tera">What is your dance style?</h2>
+      </div>
+      <div class="">
+        <div class="">
+          <input id="hiphop" name="hiphop" type="checkbox">
+          <label for="hiphop">Hip-Hop</label>
+        </div>
+        <div class="">
+          <input id="jazz" name="jazz" type="checkbox">
+          <label for="jazz">Jazz</label>
+        </div>
+        <div class="">
+          <input id="house" name="house" type="checkbox">
+          <label for="house">house</label>
+        </div>
+        <div class="">
+          <input id="waacking" name="waacking" type="checkbox">
+          <label for="waacking">Waacking</label>
+        </div>
+        <div class="">
+          <input id="vogue" name="vogue" type="checkbox">
+          <label for="vogue">Vogue</label>
+        </div>
+        <div class="">
+          <input id="afro" name="afro" type="checkbox">
+          <label for="afro">Afro</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="yotta">Payment method</legend>
+      <div class="grid">
+        <div class="unit xs-1 s-1 m-1-2 l-1-2 pad-t-1-2">
+          <label for="">Card number</label><br>
+          <input required id="cardnumber" name="cardnumber" type="number">
+        </div>
+        <div class="unit xs-1 s-1 m-1-2 l-1-2 pad-t-1-2">
+          <label for="">Name on Card</label><br>
+          <input required id="noc" name="noc" type="text">
+        </div>
+      </div>
+
+      <div class="inline-block">
+        <label for="">Expires</label><br>
+        <select class="" id="expires" name="expires">
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+
+        <label for=""></label>
+        <select class="" id="years" name="years">
+          <option>2018</option>
+          <option>2019</option>
+          <option>2020</option>
+          <option>2021</option>
+          <option>2022</option>
+          <option>2023</option>
+          <option>2024</option>
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+        </select>
+      </div>
+    </fieldset>
+
+  </form>
+</body>
+</html>
