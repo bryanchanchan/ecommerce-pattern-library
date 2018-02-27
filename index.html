@@ -975,11 +975,17 @@
       <nav class="pattern-nav">
         <ol class="list-group-inline push-1-4 pad-b-1-4">
             <li><a href="#forms--basic-form">Basic form</a></li>
-            <li><a href="#forms--dropdown">Dropdown</a></li>
+            <li><a href="#forms--checkbox-form">Checkbox form</a></li>
+            <li><a href="#forms--dropdown-form">Dropdown form</a></li>
+            <li><a href="#forms--radio-form">Radio form</a></li>
         </ol>
       </nav>
   </div>
 
+    <div class="pattern-desc milli island" >
+      <div class="max-length"><p>These form are use to gather dancer&#39;s personal information, level of dance, and style of dance that dancers had danced to before. It helps us to understand about the dancer more in depth, and allow us to offer the right dance course to dancers that want to improve on their skills of dance.</p>
+</div>
+    </div>
 
   
 
@@ -1040,21 +1046,18 @@
               </button>
               <code><pre id="forms-basic-form-code-sample-copy-chunk">&lt;form method="POST" action="https://formspree.io/chan0398@algonquinlive.com"&gt;
   &lt;fieldset>
-    &lt;legend class="yotta">Personal Information&lt;/legend>
     &lt;div class="grid">
       &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
         &lt;div class="pad-t">
           &lt;label for="">First Name&lt;/label>&lt;br>
           &lt;input required id="firstname" name="firstname" type="text">
         &lt;/div>
+
         &lt;div class="pad-t-1-2">
           &lt;label for="">Last Name&lt;/label>&lt;br>
           &lt;input required id="lastname" name="lastname" type="text">
         &lt;/div>
-        &lt;div class="pad-t-1-2">
-          &lt;label for="">Date of Birth&lt;/label>&lt;br>
-          &lt;input required id="dob" name="dob" type="date">
-        &lt;/div>
+
         &lt;div class="pad-t-1-2">
           &lt;label for="">Address&lt;/label>&lt;br>
           &lt;input required id="address" name="address">
@@ -1066,25 +1069,7 @@
           &lt;label for="">City&lt;/label>&lt;br>
           &lt;input required id="city" name="city" type="text">
         &lt;/div>
-        &lt;div class="pad-t-1-2">
-          &lt;label for="">Province&lt;/label>&lt;br>
-          &lt;select id="province" name="province">
-            &lt;option value="">Select a province&lt;/option>
-            &lt;option>Alberta&lt;/option>
-            &lt;option>British Columbia&lt;/option>
-            &lt;option>Manitoba&lt;/option>
-            &lt;option>New Brunswick&lt;/option>
-            &lt;option>Newfoundland &amp; Labrador&lt;/option>
-            &lt;option>Northwest Territiories&lt;/option>
-            &lt;option>Nova Scotia&lt;/option>
-            &lt;option>Nunavut&lt;/option>
-            &lt;option>Ontario&lt;/option>
-            &lt;option>Prince Edward Island&lt;/option>
-            &lt;option>Quebec&lt;/option>
-            &lt;option>Saskatchewan&lt;/option>
-            &lt;option>Yukon&lt;/option>
-          &lt;/select>
-        &lt;/div>
+
         &lt;div class="pad-t-1-2">
           &lt;label for="">Postal Code&lt;/label>&lt;br>
           &lt;input required id="postal" name="postal">
@@ -1099,27 +1084,69 @@
       &lt;/div>
     &lt;/div>
   &lt;/fieldset>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--checkbox-form" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Checkbox form</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-checkbox-form-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/checkbox-form" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/checkbox-form.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
 
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/checkbox-form.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-checkbox-form-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-checkbox-form-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-checkbox-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
   &lt;fieldset>
-    &lt;legend class="yotta">Dancer information&lt;/legend>
-    &lt;div>
-      &lt;h2 class="push-0 pad-b-1-8 tera">What is your dance level?&lt;/h2>
-    &lt;/div>
-    &lt;div>
-      &lt;div>
-        &lt;input id="beginner" name="level" type="radio">
-        &lt;label for="beginner">Beginner&lt;/label>
-      &lt;/div>
-      &lt;div>
-        &lt;input id="intermediate" name="level" type="radio">
-        &lt;label for="intermediate">Intermediate&lt;/label>
-      &lt;/div>
-      &lt;div>
-        &lt;input id="advance" name="level" type="radio">
-        &lt;label for="advance">Advance&lt;/label>
-      &lt;/div>
-    &lt;/div>
-
     &lt;div>
       &lt;h2 class="push-0 pad-b-1-8 tera">What is your dance style?&lt;/h2>
     &lt;/div>
@@ -1150,79 +1177,32 @@
       &lt;/div>
     &lt;/div>
   &lt;/fieldset>
-
-  &lt;fieldset>
-    &lt;legend class="yotta">Payment method&lt;/legend>
-    &lt;div class="grid">
-      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 pad-t-1-2">
-        &lt;label for="">Card number&lt;/label>&lt;br>
-        &lt;input required id="cardnumber" name="cardnumber" type="number">
-      &lt;/div>
-      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 pad-t-1-2">
-        &lt;label for="">Name on Card&lt;/label>&lt;br>
-        &lt;input required id="noc" name="noc" type="text">
-      &lt;/div>
-    &lt;/div>
-
-    &lt;div class="inline-block">
-      &lt;label for="">Expires&lt;/label>&lt;br>
-      &lt;select id="expires" name="expires">
-        &lt;option>January&lt;/option>
-        &lt;option>February&lt;/option>
-        &lt;option>March&lt;/option>
-        &lt;option>April&lt;/option>
-        &lt;option>May&lt;/option>
-        &lt;option>June&lt;/option>
-        &lt;option>July&lt;/option>
-        &lt;option>August&lt;/option>
-        &lt;option>September&lt;/option>
-        &lt;option>October&lt;/option>
-        &lt;option>November&lt;/option>
-        &lt;option>December&lt;/option>
-      &lt;/select>
-
-      &lt;label for="">&lt;/label>
-      &lt;select id="years" name="years">
-        &lt;option>2018&lt;/option>
-        &lt;option>2019&lt;/option>
-        &lt;option>2020&lt;/option>
-        &lt;option>2021&lt;/option>
-        &lt;option>2022&lt;/option>
-        &lt;option>2023&lt;/option>
-        &lt;option>2024&lt;/option>
-        &lt;option>2025&lt;/option>
-        &lt;option>2026&lt;/option>
-        &lt;option>2027&lt;/option>
-      &lt;/select>
-    &lt;/div>
-  &lt;/fieldset>
-
 &lt;/form>
 </pre></code>
             </div>
           </div>
       </div>
     </div>
-    <div class="pattern-details " id="forms--dropdown" style="">
+    <div class="pattern-details " id="forms--dropdown-form" style="">
         <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
-          <h3 class="pattern-name tera push-1-8">Dropdown</h3>
+          <h3 class="pattern-name tera push-1-8">Dropdown form</h3>
             <ul class="list-group-inline gutter absolute pin-cr">
                 <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-dropdown-code-sample">
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-dropdown-form-code-sample">
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-code"></use></svg>
                     </i>
                   </button>
                 </li>
                 <li>
-                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/dropdown" hidden>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/dropdown-form" hidden>
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-copy"></use></svg>
                     </i>
                   </button>
                 </li>
                 <li>
-                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/dropdown.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/dropdown-form.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
                     <i class="icon i-18">
                       <svg><use xlink:href="#icon-pop-out"></use></svg>
                     </i>
@@ -1235,7 +1215,7 @@
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/forms/dropdown.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
+            <iframe data-src="patterns/forms/dropdown-form.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
                 <div class="resize-handle resize-handle-left" style="">
                   <i class="icon i-18">
@@ -1251,14 +1231,126 @@
           </div>
         </div>
 
-          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-dropdown-code-sample" tabindex="-1">
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-dropdown-form-code-sample" tabindex="-1">
             <div class="pattern-code relative milli island-1-2" style="">
-              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-dropdown-code-sample-copy-chunk" hidden>
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-dropdown-form-code-sample-copy-chunk" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-dropdown-code-sample-copy-chunk">
+              <code><pre id="forms-dropdown-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
+  &lt;fieldset>
+    &lt;div class="grid">
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
+        &lt;div class="pad-t-1-2">
+          &lt;label for="">Date of Birth&lt;/label>&lt;br>
+          &lt;input required id="dob" name="dob" type="date">
+        &lt;/div>
+
+        &lt;div class="pad-t-1-2 inline-block">
+          &lt;label for="">Province&lt;/label>&lt;br>
+          &lt;select id="province" name="province">
+            &lt;option value="">Select a province&lt;/option>
+            &lt;option>Alberta&lt;/option>
+            &lt;option>British Columbia&lt;/option>
+            &lt;option>Manitoba&lt;/option>
+            &lt;option>New Brunswick&lt;/option>
+            &lt;option>Newfoundland &amp; Labrador&lt;/option>
+            &lt;option>Northwest Territiories&lt;/option>
+            &lt;option>Nova Scotia&lt;/option>
+            &lt;option>Nunavut&lt;/option>
+            &lt;option>Ontario&lt;/option>
+            &lt;option>Prince Edward Island&lt;/option>
+            &lt;option>Quebec&lt;/option>
+            &lt;option>Saskatchewan&lt;/option>
+            &lt;option>Yukon&lt;/option>
+          &lt;/select>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/fieldset>
+&lt;/form>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--radio-form" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Radio form</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-radio-form-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/radio-form" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/radio-form.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/radio-form.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-radio-form-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-radio-form-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-radio-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
+  &lt;fieldset>
+    &lt;div>
+      &lt;h2 class="push-0 pad-b-1-8 tera">What is your dance level?&lt;/h2>
+    &lt;/div>
+    &lt;div>
+      &lt;div>
+        &lt;input id="beginner" name="level" type="radio">
+        &lt;label for="beginner">Beginner&lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;input id="intermediate" name="level" type="radio">
+        &lt;label for="intermediate">Intermediate&lt;/label>
+      &lt;/div>
+      &lt;div>
+        &lt;input id="advance" name="level" type="radio">
+        &lt;label for="advance">Advance&lt;/label>
+      &lt;/div>
+    &lt;/div>
+  &lt;/fieldset>
+&lt;/form>
 </pre></code>
             </div>
           </div>

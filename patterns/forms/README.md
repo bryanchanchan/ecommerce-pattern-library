@@ -1,0 +1,1 @@
+These form are use to gather dancer's personal information, level of dance, and style of dance that dancers had danced to before. It helps us to understand about the dancer more in depth, and allow us to offer the right dance course to dancers that want to improve on their skills of dance.

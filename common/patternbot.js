@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library
- * @version 1519656361746
+ * @version 1519658898828
  */
-const patternManifest_1519656361746 = {
+const patternManifest_1519658898828 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -600,10 +600,22 @@ const patternManifest_1519656361746 = {
           "localPath": "patterns/forms/basic-form.html"
         },
         {
-          "name": "dropdown",
-          "namePretty": "Dropdown",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/dropdown.html",
-          "localPath": "patterns/forms/dropdown.html"
+          "name": "checkbox-form",
+          "namePretty": "Checkbox form",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/checkbox-form.html",
+          "localPath": "patterns/forms/checkbox-form.html"
+        },
+        {
+          "name": "dropdown-form",
+          "namePretty": "Dropdown form",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/dropdown-form.html",
+          "localPath": "patterns/forms/dropdown-form.html"
+        },
+        {
+          "name": "radio-form",
+          "namePretty": "Radio form",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/radio-form.html",
+          "localPath": "patterns/forms/radio-form.html"
         }
       ],
       "md": [
@@ -644,5 +656,5 @@ const patternManifest_1519656361746 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519656361746);
+patternBotIncludes(patternManifest_1519658898828);
 }());
