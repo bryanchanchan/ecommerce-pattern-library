@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library
- * @version 1519658898828
+ * @version 1520265207224
  */
-const patternManifest_1519658898828 = {
+const patternManifest_1520265207224 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -519,7 +519,9 @@ const patternManifest_1519658898828 = {
     "patterns": [
       "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons",
       "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms"
+      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms",
+      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation",
+      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/section"
     ],
     "pages": []
   },
@@ -634,6 +636,50 @@ const patternManifest_1519658898828 = {
           "localPath": "patterns/forms/forms.css"
         }
       ]
+    },
+    {
+      "name": "navigation",
+      "namePretty": "Navigation",
+      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation",
+      "html": [
+        {
+          "name": "nav",
+          "namePretty": "Nav",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation/nav.html",
+          "localPath": "patterns/navigation/nav.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "nav",
+          "namePretty": "Nav",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation/nav.css",
+          "localPath": "patterns/navigation/nav.css"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "namePretty": "Section",
+      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/section",
+      "html": [
+        {
+          "name": "section",
+          "namePretty": "Section",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/section/section.html",
+          "localPath": "patterns/section/section.html"
+        }
+      ],
+      "md": [],
+      "css": [
+        {
+          "name": "section",
+          "namePretty": "Section",
+          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/section/section.css",
+          "localPath": "patterns/section/section.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -656,5 +702,5 @@ const patternManifest_1519658898828 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519658898828);
+patternBotIncludes(patternManifest_1520265207224);
 }());
