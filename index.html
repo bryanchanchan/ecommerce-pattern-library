@@ -201,9 +201,9 @@
                 </a>
               </li>
               <li role="presentation">
-                <a class="gutter pad-t-1-4 pad-b-1-4 block" role="tab" aria-controls="section" href="#section">
+                <a class="gutter pad-t-1-4 pad-b-1-4 block" role="tab" aria-controls="sections" href="#sections">
                   <div class="relative">
-                    <span>Section</span>
+                    <span>Sections</span>
                     <i class="icon i-18 absolute pin-cr">
                       <svg><use xlink:href="#icon-active" /></svg>
                     </i>
@@ -222,9 +222,9 @@
         <nav class="nav mega">
           <ul class="list-group">
               <li>
-                <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/checkoutform.html" target="_blank">
+                <a class="gutter pad-t-1-4 pad-b-1-4 block page-pop" href="pages/checkout-form.html" target="_blank">
                   <div class="relative">
-                    <span>Checkoutform</span>
+                    <span>Checkout form</span>
                     <i class="icon i-18 absolute pin-cr">
                       <svg><use xlink:href="#icon-pop-out" /></svg>
                     </i>
@@ -1237,33 +1237,33 @@
   &lt;fieldset>
     &lt;div class="grid">
       &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
-        &lt;div class="pad-t">
+        &lt;div class="pad-t island-1-2">
           &lt;label for="">First Name&lt;/label>&lt;br>
           &lt;input required id="firstname" name="firstname" type="text">
         &lt;/div>
 
-        &lt;div class="pad-t-1-2">
+        &lt;div class="pad-t-1-2 island-1-2">
           &lt;label for="">Last Name&lt;/label>&lt;br>
           &lt;input required id="lastname" name="lastname" type="text">
         &lt;/div>
 
-        &lt;div class="pad-t-1-2">
+        &lt;div class="pad-t-1-2 island-1-2">
           &lt;label for="">Address&lt;/label>&lt;br>
           &lt;input required id="address" name="address">
         &lt;/div>
       &lt;/div>
 
       &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
-        &lt;div class="pad-t">
+        &lt;div class="pad-t island-1-2">
           &lt;label for="">City&lt;/label>&lt;br>
           &lt;input required id="city" name="city" type="text">
         &lt;/div>
 
-        &lt;div class="pad-t-1-2">
+        &lt;div class="pad-t-1-2 island-1-2">
           &lt;label for="">Postal Code&lt;/label>&lt;br>
           &lt;input required id="postal" name="postal">
         &lt;/div>
-        &lt;div class="pad-t-1-2">
+        &lt;div class="pad-t-1-2 island-1-2">
           &lt;label for="">Telephone
             &lt;label>&lt;br>
               &lt;input id="postal" name="postal" type="tel">
@@ -1335,32 +1335,32 @@
                 </i>
               </button>
               <code><pre id="forms-checkbox-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;fieldset>
+  &lt;fieldset class="island">
     &lt;div>
       &lt;h2 class="push-0 pad-b-1-8 tera">What is your dance style?&lt;/h2>
     &lt;/div>
-    &lt;div>
-      &lt;div>
+    &lt;div class="grid grid-middle">
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="hiphop" name="hiphop" type="checkbox">
         &lt;label for="hiphop">Hip-Hop&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="jazz" name="jazz" type="checkbox">
         &lt;label for="jazz">Jazz&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="house" name="house" type="checkbox">
         &lt;label for="house">house&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="waacking" name="waacking" type="checkbox">
         &lt;label for="waacking">Waacking&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="vogue" name="vogue" type="checkbox">
         &lt;label for="vogue">Vogue&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island-1-2">
         &lt;input id="afro" name="afro" type="checkbox">
         &lt;label for="afro">Afro&lt;/label>
       &lt;/div>
@@ -1430,7 +1430,7 @@
               <code><pre id="forms-dropdown-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
   &lt;fieldset>
     &lt;div class="grid">
-      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2">
+      &lt;div class="unit xs-1 s-1 m-1-2 l-1-2 island">
         &lt;div class="pad-t-1-2">
           &lt;label for="">Date of Birth&lt;/label>&lt;br>
           &lt;input required id="dob" name="dob" type="date">
@@ -1520,20 +1520,20 @@
                 </i>
               </button>
               <code><pre id="forms-radio-form-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;fieldset>
+  &lt;fieldset class="island">
     &lt;div>
       &lt;h2 class="push-0 pad-b-1-8 tera">What is your dance level?&lt;/h2>
     &lt;/div>
     &lt;div>
-      &lt;div>
+      &lt;div class="island-1-2">
         &lt;input id="beginner" name="level" type="radio">
         &lt;label for="beginner">Beginner&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="island-1-2">
         &lt;input id="intermediate" name="level" type="radio">
         &lt;label for="intermediate">Intermediate&lt;/label>
       &lt;/div>
-      &lt;div>
+      &lt;div class="island-1-2">
         &lt;input id="advance" name="level" type="radio">
         &lt;label for="advance">Advance&lt;/label>
       &lt;/div>
@@ -1735,26 +1735,26 @@
 
 </section>
 
-        <section class="pattern" id="section" role="tabpanel" hidden aria-hidden="true" style="">
+        <section class="pattern" id="sections" role="tabpanel" hidden aria-hidden="true" style="">
   <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: #f4da40; font-family: ;">Section</h2>
+    <h2 class="pattern-name exa push-1-4" style="color: #f4da40; font-family: ;">Sections</h2>
         <ul class="list-group-inline gutter absolute pin-cr">
             <li>
-              <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="section-section-code-sample">
+              <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="sections-section-code-sample">
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-code"></use></svg>
                 </i>
               </button>
             </li>
             <li>
-              <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="section/section" hidden>
+              <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="sections/section" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
             </li>
             <li>
-              <a class="center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/section/section.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+              <a class="center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/sections/section.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-pop-out"></use></svg>
                 </i>
@@ -1766,13 +1766,13 @@
 
   
 
-    <div class="pattern-details " id="section--section" style="">
+    <div class="pattern-details " id="sections--section" style="">
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
           <div class="resizeable-pattern relative" style="">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/section/section.html" scrolling="no" data-inject-css=" " ></iframe>
+            <iframe data-src="patterns/sections/section.html" scrolling="no" data-inject-css=" " ></iframe>
               <div class="resizeable-pattern-length">
                 <div class="resize-handle resize-handle-left" style="">
                   <i class="icon i-18">
@@ -1788,14 +1788,14 @@
           </div>
         </div>
 
-          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="section-section-code-sample" tabindex="-1">
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="sections-section-code-sample" tabindex="-1">
             <div class="pattern-code relative milli island-1-2" style="">
-              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#section-section-code-sample-copy-chunk" hidden>
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#sections-section-code-sample-copy-chunk" hidden>
                 <i class="icon i-18">
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="section-section-code-sample-copy-chunk">&lt;section&gt;
+              <code><pre id="sections-section-code-sample-copy-chunk">&lt;section&gt;
   &lt;div>
     &lt;h1 class="pad-t-2 yotta gutter">Dance with us now!&lt;/h1>
     &lt;p class="pad-t gutter tera">You can learn dances online now with all of these professional dancers!&lt;/p>
