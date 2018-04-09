@@ -21,6 +21,13 @@
   color: var(--color-primary);
 }
 
+.btn-grey {
+  background-color: var(--color-neutral);
+  border-color: var(--color-neutral);
+
+  color: #fff;
+}
+
 .btn:hover  {
   background-color: transparent;
   border-color: var(--color-primary);
@@ -37,4 +44,11 @@
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
+}
+
+.btn-grey:hover {
+  background-color: transparent;
+  border-color: var(--color-neutral);
+
+  color: var(--color-neutral);
 }

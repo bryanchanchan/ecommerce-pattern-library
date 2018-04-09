@@ -1,0 +1,24 @@
+footer {
+  background-color: var(--color-neutral);
+  text-align: center;
+}
+
+.icon {
+  color:  #fff;
+}
+
+.icon svg {
+  stroke: #fff;
+}
+
+small {
+  color: #fff;
+}
+
+.foot-nav {
+  background-color: var(--color-primary);
+}
+
+.foot-title {
+  color: #fff;
+}

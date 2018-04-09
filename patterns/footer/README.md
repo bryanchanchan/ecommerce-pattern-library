@@ -1,0 +1,1 @@
+The footer pattern is used in the bottom of every Energizes webpages. The navigation is also included in the footer, so customers don't have to go back to the top of they want to search from navigation on the top of the webpage.
