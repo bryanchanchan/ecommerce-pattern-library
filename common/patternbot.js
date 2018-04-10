@@ -388,9 +388,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library
- * @version 1523373402686
+ * @version 1523375032309
  */
-const patternManifest_1523373402686 = {
+const patternManifest_1523375032309 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -532,15 +532,16 @@ const patternManifest_1523373402686 = {
       "bodyBasic": "This is a company that allows shy, beginner dancers to learn from online dance tutorials from famous choreographers that have collaborate with us to help dancers grow before stepping into the dance studio."
     },
     "icons": [
-      "control",
-      "facebook",
       "floor-work",
+      "facebook",
+      "control",
       "footwork",
-      "foundation",
       "groove",
+      "foundation",
       "instagram",
-      "strength",
       "isolation",
+      "speed",
+      "strength",
       "texture"
     ],
     "interfaceColours": {
@@ -861,5 +862,5 @@ const patternManifest_1523373402686 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523373402686);
+patternBotIncludes(patternManifest_1523375032309);
 }());
