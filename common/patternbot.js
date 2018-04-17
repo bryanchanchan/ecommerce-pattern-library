@@ -86,11 +86,17 @@ const patternBotIncludes = function (manifest) {
     `},
   };
 
+  let jsFileQueue = {
+    sync: [],
+    async: [],
+  };
   let downloadedAssets = {};
 
   const downloadHandler = function (e) {
+    const id = (e.target.hasAttribute('src')) ? e.target.getAttribute('src') : e.target.getAttribute('href');
+
     e.target.removeEventListener('load', downloadHandler);
-    downloadedAssets[e.target.getAttribute('href')] = true;
+    downloadedAssets[id] = true;
   };
 
   const findRootPath = function () {
@@ -115,7 +121,7 @@ const patternBotIncludes = function (manifest) {
     newLink.addEventListener('load', downloadHandler);
 
     document.head.appendChild(newLink);
-  }
+  };
 
   const bindAllCssFiles = function (rootPath) {
     if (manifest.commonInfo && manifest.commonInfo.readme && manifest.commonInfo.readme.attributes &&  manifest.commonInfo.readme.attributes.fontUrl) {
@@ -136,6 +142,54 @@ const patternBotIncludes = function (manifest) {
         addCssFile(`../${css.localPath}`);
       });
     });
+  };
+
+  const queueAllJsFiles = function (rootPath) {
+    if (manifest.patternLibFiles && manifest.patternLibFiles.js) {
+      manifest.patternLibFiles.js.forEach((js) => {
+        const href = `..${manifest.config.commonFolder}/${js.filename}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.sync.push(href);
+      });
+    }
+
+    manifest.userPatterns.forEach((pattern) => {
+      if (!pattern.js) return;
+
+      pattern.js.forEach((js) => {
+        const href = `../${js.localPath}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.async.push(href);
+      });
+    });
+  };
+
+  const addJsFile = function (href) {
+    const newScript = document.createElement('script');
+
+    newScript.setAttribute('src', href);
+    document.body.appendChild(newScript);
+
+    return newScript;
+  };
+
+  const bindNextJsFile = function (e) {
+    if (e && e.target) {
+      e.target.removeEventListener('load', bindNextJsFile);
+      downloadedAssets[e.target.getAttribute('src')] = true;
+    }
+
+    if (jsFileQueue.sync.length > 0) {
+      const scriptTag = addJsFile(jsFileQueue.sync.shift());
+      scriptTag.addEventListener('load', bindNextJsFile);
+    } else {
+      jsFileQueue.async.forEach((js) => {
+        const scriptTag = addJsFile(js);
+        scriptTag.addEventListener('load', downloadHandler);
+      });
+    }
   };
 
   const getPatternInfo = function (patternElem) {
@@ -368,11 +422,13 @@ const patternBotIncludes = function (manifest) {
 
     rootPath = findRootPath();
     bindAllCssFiles(rootPath);
+    queueAllJsFiles(rootPath);
     allPatternTags = findAllPatternTags();
     allPatterns = constructAllPatterns(rootPath, allPatternTags);
 
     loadAllPatterns(allPatterns).then((allLoadedPatterns) => {
       renderAllPatterns(allPatternTags, allLoadedPatterns);
+      bindNextJsFile();
       hideLoadingScreen();
     }).catch((e) => {
       console.group('Pattern load error');
@@ -387,10 +443,10 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
- * /Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library
- * @version 1523377600607
+ * /Users/diandra/Desktop/ecommerce-pattern-library-chan
+ * @version 352928a0d0a396a637d15d0861a9fa11f4093ef9
  */
-const patternManifest_1523377600607 = {
+const patternManifest_352928a0d0a396a637d15d0861a9fa11f4093ef9 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -551,62 +607,68 @@ const patternManifest_1523377600607 = {
   },
   "patternLibFiles": {
     "commonParsable": {
-      "gridifier": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/common/grid.css",
-      "typografier": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/common/type.css",
-      "modulifier": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/common/modules.css",
-      "theme": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/common/theme.css"
+      "gridifier": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/common/grid.css",
+      "typografier": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/common/type.css",
+      "modulifier": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/common/modules.css",
+      "theme": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/images/icons.svg"
+      "icons": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/images/icons.svg"
     },
     "logos": {
-      "sizeLarge": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/images/logo-256.svg",
-      "size64": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/images/logo-64.svg",
-      "size32": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/images/logo-32.svg",
-      "size16": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/images/logo-16.svg",
+      "sizeLarge": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/images/logo-256.svg",
+      "size64": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/images/logo-64.svg",
+      "size32": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/images/logo-32.svg",
+      "size16": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/images/logo-16.svg",
       "size16Local": "logo-16.svg",
       "sizeLargeLocal": "logo-256.svg",
       "size32Local": "logo-32.svg",
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/footer",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/header",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation",
-      "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/sections"
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/buttons",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/footer",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/header",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/navigation",
+      "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/sections"
     ],
     "pages": [
       {
         "name": "checkout-form.html",
         "namePretty": "Checkout form",
-        "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/pages/checkout-form.html"
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/pages/checkout-form.html"
       },
       {
         "name": "home.html",
         "namePretty": "Home",
-        "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/pages/home.html"
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/pages/home.html"
+      },
+      {
+        "name": "product-details.html",
+        "namePretty": "Product details",
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/pages/product-details.html"
       },
       {
         "name": "product.html",
         "namePretty": "Product",
-        "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/pages/product.html"
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/pages/product.html"
       }
-    ]
+    ],
+    "js": []
   },
   "userPatterns": [
     {
       "name": "buttons",
       "namePretty": "Buttons",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/buttons",
       "html": [
         {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons/buttons.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
       ],
@@ -615,7 +677,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
       ],
@@ -624,35 +686,36 @@ const patternManifest_1523377600607 = {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/buttons/buttons.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "cards",
       "namePretty": "Cards",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards",
       "html": [
         {
           "name": "basic-card",
           "namePretty": "Basic card",
           "filename": "basic-card",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards/basic-card.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards/basic-card.html",
           "localPath": "patterns/cards/basic-card.html"
         },
         {
           "name": "icon-card",
           "namePretty": "Icon card",
           "filename": "icon-card",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards/icon-card.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards/icon-card.html",
           "localPath": "patterns/cards/icon-card.html"
         },
         {
           "name": "icon-no-description-card",
           "namePretty": "Icon no description card",
           "filename": "icon-no-description-card",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards/icon-no-description-card.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards/icon-no-description-card.html",
           "localPath": "patterns/cards/icon-no-description-card.html"
         }
       ],
@@ -661,7 +724,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
       ],
@@ -670,21 +733,22 @@ const patternManifest_1523377600607 = {
           "name": "cards",
           "namePretty": "Cards",
           "filename": "cards",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/cards/cards.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "footer",
       "namePretty": "Footer",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/footer",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/footer",
       "html": [
         {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/footer/footer.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html"
         }
       ],
@@ -693,7 +757,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/footer/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
       ],
@@ -702,42 +766,43 @@ const patternManifest_1523377600607 = {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/footer/footer.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "forms",
       "namePretty": "Forms",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms",
       "html": [
         {
           "name": "basic-form",
           "namePretty": "Basic form",
           "filename": "basic-form",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/basic-form.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/basic-form.html",
           "localPath": "patterns/forms/basic-form.html"
         },
         {
           "name": "checkbox-form",
           "namePretty": "Checkbox form",
           "filename": "checkbox-form",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/checkbox-form.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/checkbox-form.html",
           "localPath": "patterns/forms/checkbox-form.html"
         },
         {
           "name": "dropdown-form",
           "namePretty": "Dropdown form",
           "filename": "dropdown-form",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/dropdown-form.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/dropdown-form.html",
           "localPath": "patterns/forms/dropdown-form.html"
         },
         {
           "name": "radio-form",
           "namePretty": "Radio form",
           "filename": "radio-form",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/radio-form.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/radio-form.html",
           "localPath": "patterns/forms/radio-form.html"
         }
       ],
@@ -746,7 +811,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
       ],
@@ -755,21 +820,22 @@ const patternManifest_1523377600607 = {
           "name": "forms",
           "namePretty": "Forms",
           "filename": "forms",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/forms/forms.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "header",
       "namePretty": "Header",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/header",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/header",
       "html": [
         {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/header/header.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/header/header.html",
           "localPath": "patterns/header/header.html"
         }
       ],
@@ -778,7 +844,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/header/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
       ],
@@ -787,21 +853,22 @@ const patternManifest_1523377600607 = {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/header/header.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "navigation",
       "namePretty": "Navigation",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/navigation",
       "html": [
         {
           "name": "nav",
           "namePretty": "Nav",
           "filename": "nav",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation/nav.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/navigation/nav.html",
           "localPath": "patterns/navigation/nav.html"
         }
       ],
@@ -811,21 +878,22 @@ const patternManifest_1523377600607 = {
           "name": "nav",
           "namePretty": "Nav",
           "filename": "nav",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/navigation/nav.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/navigation/nav.css",
           "localPath": "patterns/navigation/nav.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "sections",
       "namePretty": "Sections",
-      "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/sections",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/sections",
       "html": [
         {
           "name": "section",
           "namePretty": "Section",
           "filename": "section",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/sections/section.html",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/sections/section.html",
           "localPath": "patterns/sections/section.html"
         }
       ],
@@ -834,7 +902,7 @@ const patternManifest_1523377600607 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/sections/README.md",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/sections/README.md",
           "localPath": "patterns/sections/README.md"
         }
       ],
@@ -843,10 +911,11 @@ const patternManifest_1523377600607 = {
           "name": "section",
           "namePretty": "Section",
           "filename": "section",
-          "path": "/Users/bryanchan/Semester 4/Web dev 4/ecommerce-pattern-library/patterns/sections/section.css",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library-chan/patterns/sections/section.css",
           "localPath": "patterns/sections/section.css"
         }
-      ]
+      ],
+      "js": []
     }
   ],
   "config": {
@@ -869,5 +938,5 @@ const patternManifest_1523377600607 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523377600607);
+patternBotIncludes(patternManifest_352928a0d0a396a637d15d0861a9fa11f4093ef9);
 }());
