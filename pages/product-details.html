@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../common/patternbot.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class=" gutter-1-2 push-2">
+    <script type="application/json" data-pattern="header/header"></script>
+  </div>
+
+  <!-- ICON CARD -->
+
+    <div class="grid">
+      <div class="unit xs-1 s-1 m-1 l-1-3 l-1-3 push-2 island">
+        <script type="application/json" data-pattern="cards/icon-no-description-card">
+          {
+          "use[xlink:href]": "../../images/icons.svg#strength",
+          "h2": "Strength"
+          }
+        </script>
+      </div>
+
+
+    <div class="unit xs-1 s-1 m-1 l-2-3 xl-2-3 gutter-2 island">
+      <div class="content">
+        <h1>Strength</h1>
+        <p>Strength is one of the most important foundation every dancers should have, because when delievering movements to movements it requires strength to make everything looks clean.</p>
+      </div>
+      <a class="btn btn-dark" href="checkout-form.html">Dark button</a>
+    </div>
+  </div>
+
+  <script type="application/json" data-pattern="buttons/buttons"></script>
+
+    <!-- FOOTER -->
+    <script type="application/json" data-pattern="footer/footer"></script>
+
+
+</body>
+</html>
